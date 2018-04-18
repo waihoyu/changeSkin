@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        vertical-align: top;
+    }
+    body{
+        background: url("images/car02.jpg") no-repeat;
+        background-size: cover;
+
+    }
+    #box{
+        background-color: rgb(255, 255, 255,.5);
+       
+    }
+    #box ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        cursor: pointer;
+    }
+    #box ul li img{
+        width: 200px;
+        height:120px;
+        margin: 10px 0;       
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li>
+                <img src="images/car01.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/car02.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/car03.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/car04.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/car05.jpg" alt="">
+            </li>
+        </ul>
+
+        <script>
+            window.onload = function(){
+                var box = document.getElementById("box");
+                var allists = box.getElementsByTagName("li");          
+                for(var i = 0 ; i < allists.length; i++){
+                    var list1 = allists[i];                
+                    list1.index = i + 1;
+                    list1.onclick = function (){                     
+                        document.body.style.background = 'url("images/car0' + this.index + '.jpg")';
+                        document.body.style.backgroundSize =  'cover';
+                    }
+                }
+            }
+        
+        </script>
+    </div>
+</body>
+</html>
